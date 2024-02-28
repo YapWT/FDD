@@ -1,0 +1,54 @@
+body {
+        background-image: url("Login_bg.png");
+        font-family: Century Gothic;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 100px;
+}
+
+img {
+        width: 150px;
+        height: 150px;
+}
+
+#content {
+        border: 1px solid black;
+        border-radius: 15px;
+        width: max-content;
+        margin: auto;
+        margin-top: 20px;
+        padding: 100px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        background-color: rgb(255, 255, 255, 0.5);
+}
+
+input {
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 30px;
+        width: 200px;
+        font-family: Century Gothic;
+        padding-left: 10px;
+        padding-right: 10px;
+}
+
+button {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100px;
+        height: 30px;
+        font-family: Century Gothic;
+        font-size: larger;
+        font-weight: 1000;
+        background-color: rgba(255, 255, 255, 0.507);
+        cursor: pointer;
+}
+
+button:hover {
+        background-color: rgba(128, 128, 128, 0.507);
+}
+
+button:active {
+        background-color: rgba(255, 255, 255, 0.507);
+}

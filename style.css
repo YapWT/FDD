@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    margin: auto;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive;
+    background-color: white;
+}
+
+button:hover, #BTN_log:hover {
+    background-color: rgb(207, 207, 207);
+    border: none;
+}
+/* header */
+* {
+    box-sizing: border-box;
+}
+
+.DIV_stickyHeader {
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 1000;
+    background-color: white;
+}
+
+.DIV_headerLeft {
+    left: 0;
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+
+.DIV_headerMiddle {
+    text-align: center;
+    font-size: x-large;
+    padding-bottom: 40px;
+}
+
+.BTN_home, #BTN_log, .BTN_DRP {
+    background-color: transparent;
+    font-size: x-large;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.DIV_dropContent {
+    position: relative;
+    display: inline-block;
+}
+
+.DIV_DRPcontent {
+    display: none;
+    position: absolute;
+    padding-left: 75px;
+    z-index: 1;
+    font-size: small;
+}
+
+.DIV_DRPcontent a {
+    display: block;
+    text-align: right;
+}
+
+.DIV_dropContent:hover .DIV_DRPcontent {
+    display: block;
+}
+
+.DIV_headerRight {
+    right: 0;
+}
+
+#BTN_headerRight {
+    width: 150px;
+    height: 120px;
+    font-size: xx-large;
+    background-image: url("C:\\Users\\Y\\Pictures\\Saved Pictures\\WhatsApp Image 2024-01-09 at 13.45.04_44c74909.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#BTN_headerRight:hover {
+    background-image: url("C:\\Users\\Y\\Pictures\\Saved Pictures\\WhatsApp Image 2024-01-09 at 13.41.53_8abe804c.jpg");
+}
+
+/**/
+#content {
+    margin-top: 150px;
+}
+
+/* faq.html */
+.DIV_faqSection {
+    width: 600px;
+    text-align: center;
+    margin: auto;
+}
+
+.faq_a {
+    margin: auto;
+    text-align: justify;
+    display: none;
+}
+
+.li_faq {
+    text-align: justify;
+}
+
+#DIV_faq {
+    margin-top: 10%;
+    margin-bottom: 12%;
+}
+
+/* about_us.html */
+#DIV_about {
+    text-align: center;
+}
+
+.DIV_aboutWhats {
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: justify;
+}
+
+.p_about {
+    text-align: justify;
+    width: 500px;
+    margin: auto;
+}
+
+.h_what {
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 175px;
+}
+
+.li_about {
+    text-align: justify;
+    margin-left: 30px;
+}
+
+.DIV_aboutGet {
+    margin-left: 90px;
+    margin-right: 90px;
+    text-align: justify;
+}
+
+/* contact_us.html */
+#DIV_contact {
+    margin-left: 20px;
+}
+
+.DIV_CgeneralNclub, .DIV_CvisitNoffice {
+    display: flex;
+}
+
+.DIV_Cgeneral, .DIV_Cvisit, .DIV_Cclub, .DIV_Coffice {
+    position: relative;
+    flex: 1;
+}
+
+.DIV_Cclub, .DIV_Coffice {
+    margin-right: auto; 
+}
+
+.DIV_Cgeneral, .DIV_Cvisit {
+    margin-left: auto; 
+}
+

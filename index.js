@@ -81,9 +81,8 @@ function login()
         localStorage.setItem("login", JSON.stringify(TP));
         window.location.href = 'index.html';
     } else
-    {
         showMessage("Invalid TP number or password. Please try again. ")
-    }
+
 }
 
 function sign_up()
@@ -95,12 +94,10 @@ function sign_up()
     const member = JSON.parse(localStorage.getItem(TP));
 
     if (member)
-    {
         showMessage("This TP number has register to our website. Please try again. ")
-    } else if (!TP || !name || !pass)
-    {
+    else if (!TP || !name || !pass)
         showMessage("Empty Input Found! Please try again. ")
-    } else
+    else
     {
         const m = {name, pass}
         localStorage.setItem(TP, JSON.stringify(m));

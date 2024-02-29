@@ -18,15 +18,17 @@ function clearInputFields(...ids)
     });
 }
 
-// header then other
-window.onload = function() {
+// fetch the header then run other program
+window.onload = function() 
+{
     fetchHeader().then(() => {
         loginNlogout();
         sign_upButtonContent();
     });
 };
 
-function fetchHeader() {
+function fetchHeader() 
+{
     return fetch('header.html')
         .then(response => response.text())
         .then(html => {
@@ -35,7 +37,7 @@ function fetchHeader() {
         .catch(error => console.error('Error fetching header content:', error));
 }
 
-// change the login or logout button text and function
+// change the text and function of the login or logout button
 function loginNlogout() 
 {
     const button = document.getElementById("BTN_log");
@@ -52,7 +54,7 @@ function loginNlogout()
     }
 }
 
-// sign up or profile button text and function
+// text and function of the sign up or profile button 
 function sign_upButtonContent() 
 {
     const button = document.getElementById("BTN_headerRight");
@@ -69,6 +71,7 @@ function sign_upButtonContent()
     }
 }
 
+// login.html
 function login()
 {
     const TP = document.getElementById("INP_loginTP").value.toUpperCase();
@@ -81,11 +84,11 @@ function login()
         localStorage.setItem("login", JSON.stringify(TP));
         window.location.href = 'index.html';
     } else
-    {
         showMessage("Invalid TP number or password. Please try again. ")
-    }
+
 }
 
+// sign up.html
 function sign_up()
 {
     const TP = document.getElementById("INP_signTP").value.toUpperCase();
@@ -95,12 +98,12 @@ function sign_up()
     const member = JSON.parse(localStorage.getItem(TP));
 
     if (member)
-    {
         showMessage("This TP number has register to our website. Please try again. ")
-    } else if (!TP || !name || !pass)
-    {
+    else if (!name || !pass)
         showMessage("Empty Input Found! Please try again. ")
-    } else
+    else if (!checkTP(TP))
+        showMessage("Invalid TP numbers. ")
+    else
     {
         const m = {name, pass}
         localStorage.setItem(TP, JSON.stringify(m));
@@ -111,6 +114,12 @@ function sign_up()
     clearInputFields(TP,name,pass)
 }
 
+function checkTP(TP)
+{
+    return  /^TP\d{6}$/.test(TP)
+}
+
+// logout button's fucntion
 function logout()
 {
     localStorage.removeItem("login");
@@ -123,70 +132,70 @@ function faq(questionNum)
     if (questionNum == 1)
     {
         if (window.getComputedStyle(document.getElementById('faq_a1')).display === 'block')
-            { document.getElementById('faq_a1').style.display = 'none'; }
+            document.getElementById('faq_a1').style.display = 'none'; 
         else
-            { document.getElementById('faq_a1').style.display = 'block'; }
+            document.getElementById('faq_a1').style.display = 'block';
     }
     else if (questionNum == 2)
     {
         if (window.getComputedStyle(document.getElementById('faq_a2')).display === 'block')
-            { document.getElementById('faq_a2').style.display = 'none'; }
+            document.getElementById('faq_a2').style.display = 'none';
         else
-            { document.getElementById('faq_a2').style.display = 'block'; }
+            document.getElementById('faq_a2').style.display = 'block';
     }
     else if (questionNum == 3)
     {
         if (window.getComputedStyle(document.getElementById('faq_a3')).display === 'block')
-        { document.getElementById('faq_a3').style.display = 'none'; }
+        document.getElementById('faq_a3').style.display = 'none';
         else
-        { document.getElementById('faq_a3').style.display = 'block'; }
+        document.getElementById('faq_a3').style.display = 'block';
     }
     else if (questionNum == 4)
     {
         if (window.getComputedStyle(document.getElementById('faq_a4')).display === 'block')
-        { document.getElementById('faq_a4').style.display = 'none'; }
+        document.getElementById('faq_a4').style.display = 'none';
         else
-        { document.getElementById('faq_a4').style.display = 'block'; }
+        document.getElementById('faq_a4').style.display = 'block';
     }
     else if (questionNum == 5)
     {
         if (window.getComputedStyle(document.getElementById('faq_a5')).display === 'block')
-            { document.getElementById('faq_a5').style.display = 'none'; }
+            document.getElementById('faq_a5').style.display = 'none';
         else
-            { document.getElementById('faq_a5').style.display = 'block'; }
+            document.getElementById('faq_a5').style.display = 'block';
     }
     else if (questionNum == 6)
     {
         if (window.getComputedStyle(document.getElementById('faq_a6')).display === 'block')
-            { document.getElementById('faq_a6').style.display = 'none'; }
+            document.getElementById('faq_a6').style.display = 'none';
         else
-            { document.getElementById('faq_a6').style.display = 'block'; }
+            document.getElementById('faq_a6').style.display = 'block';
     }
     else if (questionNum == 7)
     {
         if (window.getComputedStyle(document.getElementById('faq_a7')).display === 'block')
-        { document.getElementById('faq_a7').style.display = 'none'; }
+        document.getElementById('faq_a7').style.display = 'none';
         else
-        { document.getElementById('faq_a7').style.display = 'block'; }
+        document.getElementById('faq_a7').style.display = 'block';
     }
     else if (questionNum == 8)
     {
         if (window.getComputedStyle(document.getElementById('faq_a8')).display === 'block')
-            { document.getElementById('faq_a8').style.display = 'none'; }
+            document.getElementById('faq_a8').style.display = 'none';
         else
-            { document.getElementById('faq_a8').style.display = 'block'; }
+            document.getElementById('faq_a8').style.display = 'block';
     }
     else if (questionNum == 9)
     {
         if (window.getComputedStyle(document.getElementById('faq_a9')).display === 'block')
-            { document.getElementById('faq_a9').style.display = 'none'; }
+            document.getElementById('faq_a9').style.display = 'none';
         else
-            { document.getElementById('faq_a9').style.display = 'block'; }
+            document.getElementById('faq_a9').style.display = 'block';
     }
 }
 
 // about
-function scrollToSection(sectionID) {
-    var url = 'about_us.html#' + sectionID;
-    window.location.href = url; // Redirect to the specified URL
+function scrollToSection(sectionID) 
+{
+    window.location.href = 'about_us.html#' + sectionID; // Redirect to the specified URL
 }

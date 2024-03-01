@@ -194,21 +194,16 @@ function faq(questionNum)
     }
 }
 
+// about page, scroll fucntion
 document.addEventListener("DOMContentLoaded", function() {
     // Function to scroll to the respective sections
-    function scrollToSection(sectionId) {
-        var section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
+    function scrollToSection(DIV) {
+        document.getElementById(DIV).scrollIntoView({behavior: "smooth"})
     }
 
-    // Check if there's a section specified in the URL
-    var urlParams = new URLSearchParams(window.location.search);
-    var sectionToScroll = urlParams.get('section');
+    var s = new URLSearchParams(window.location.search); // window.location.search == ?section=DIV_contact
+    // URLSearchParams got Parameter name: 'section' and Parameter value: 'DIV_contact'
+    var divID = s.get('section'); // s.get('section') return "DIV_contact" then saves it in divID
 
-    // Scroll to the specified section if provided in the URL
-    if (sectionToScroll) {
-        scrollToSection(sectionToScroll);
-    }
+    scrollToSection(divID); // scroll in to the page
 });

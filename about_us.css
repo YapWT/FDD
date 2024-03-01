@@ -29,14 +29,15 @@ body {
 }
     
 #DIV_faq {
-        
+        padding-bottom: 50px;
         padding-top: 50px;
 }
     
 /* about_us.html */
+/* about_us */
 #DIV_about {
         text-align: center;
-        padding-top: 125px;
+        padding-bottom: 100px;
 }
 
 .DIV_aboutWhats {
@@ -68,11 +69,11 @@ body {
         margin-right: 90px;
         text-align: justify;
 }
-    
-/* contact_us.html */
+
+/* contact_us */
 #DIV_contact {
         margin-left: 20px;
-        padding-top: 125px;
+        padding-top: 100px;
 }
     
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {

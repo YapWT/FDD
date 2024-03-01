@@ -67,7 +67,7 @@ function sign_upButtonContent()
     } 
     else 
     {
-        button.innerHTML = `<a href="sign_up.html"><button id="BTN_headerRight">Join<br>Now</button></a>`;
+        button.innerHTML = `<a href="sign_up.html"><button id="BTN_headerRight">Join Now</button></a>`;
     }
 }
 
@@ -194,8 +194,21 @@ function faq(questionNum)
     }
 }
 
-// about
-function scrollToSection(sectionID) 
-{
-    window.location.href = 'about_us.html#' + sectionID; // Redirect to the specified URL
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to scroll to the respective sections
+    function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    // Check if there's a section specified in the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var sectionToScroll = urlParams.get('section');
+
+    // Scroll to the specified section if provided in the URL
+    if (sectionToScroll) {
+        scrollToSection(sectionToScroll);
+    }
+});

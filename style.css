@@ -41,14 +41,12 @@ button:hover, #BTN_log:hover {
 
 .DIV_headerLeft {
     left: 0;
-    padding-bottom: 20px;
     padding-left: 25px;
 }
 
 .DIV_headerMiddle {
     text-align: center;
     font-size: x-large;
-    padding-bottom: 40px;
 }
 
 .BTN_home, #BTN_log, .BTN_DRP {
@@ -86,15 +84,15 @@ button:hover, #BTN_log:hover {
 
 #BTN_headerRight {
     width: 150px;
-    height: 120px;
+    height: 100px;
     font-size: xx-large;
-    background-image: url("C:\\Users\\Y\\Pictures\\Saved Pictures\\WhatsApp Image 2024-01-09 at 13.45.04_44c74909.jpg");
+    background-image: url("#");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #BTN_headerRight:hover {
-    background-image: url("C:\\Users\\Y\\Pictures\\Saved Pictures\\WhatsApp Image 2024-01-09 at 13.41.53_8abe804c.jpg");
+    background-image: url("#");
 }
 
 /**/
@@ -102,7 +100,9 @@ button:hover, #BTN_log:hover {
     margin-top: 150px;
 }
 
-/* faq.html */
+
+/* 
+// faq.html 
 .DIV_faqSection {
     width: 600px;
     text-align: center;
@@ -124,7 +124,7 @@ button:hover, #BTN_log:hover {
     margin-bottom: 12%;
 }
 
-/* about_us.html */
+// about_us.html 
 #DIV_about {
     text-align: center;
 }
@@ -159,7 +159,7 @@ button:hover, #BTN_log:hover {
     text-align: justify;
 }
 
-/* contact_us.html */
+// contact_us.html 
 #DIV_contact {
     margin-left: 20px;
 }
@@ -180,4 +180,4 @@ button:hover, #BTN_log:hover {
 .DIV_Cgeneral, .DIV_Cvisit {
     margin-left: auto; 
 }
-
+ */

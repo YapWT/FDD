@@ -6,7 +6,7 @@ body {
         text-align: justify;
         background-image: url(BACKGROUND.png);
 }
-    
+
 /* faq.html */
 .DIV_faqSection {
         width: 600px;
@@ -29,13 +29,14 @@ body {
 }
     
 #DIV_faq {
-        margin-top: 10%;
-        margin-bottom: 12%;
+        
+        padding-top: 50px;
 }
     
 /* about_us.html */
 #DIV_about {
         text-align: center;
+        padding-top: 125px;
 }
 
 .DIV_aboutWhats {
@@ -71,6 +72,7 @@ body {
 /* contact_us.html */
 #DIV_contact {
         margin-left: 20px;
+        padding-top: 125px;
 }
     
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {

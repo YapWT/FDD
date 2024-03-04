@@ -97,8 +97,38 @@ button:hover, #BTN_log:hover {
 
 /**/
 #content {
-    margin-top: 150px;
+    margin-top: 200px;
 }
+
+/* profile.html */
+.DIV_profile {
+    width: 600px;
+    border: 1px solid black;
+    text-align: auto;
+    margin: auto;
+}
+
+.DIV_profilePic, .DIV_userName, .DIV_tpNcontact, .DIV_email, .DIV_changePass {
+    text-align: center;
+}
+
+.DIV_tpNcontact {
+    display: flex;
+}
+
+.DIV_TPnumber {
+    position: relative;
+    flex: 1;
+    margin-left: auto;
+}
+
+
+.DIV_contact {
+    position: relative;
+    flex: 1;
+    margin-right: auto;
+}
+
 
 
 /* 

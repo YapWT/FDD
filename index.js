@@ -24,6 +24,7 @@ window.onload = function()
     fetchHeader().then(() => {
         loginNlogout();
         sign_upButtonContent();
+        profile();
     });
 };
 
@@ -93,25 +94,27 @@ function sign_up()
 {
     const TP = document.getElementById("INP_signTP").value.toUpperCase();
     const name = document.getElementById("INP_signName").value;
+    const email = document.getElementById("INP_signEmail").value;
+    const contact = document.getElementById("INP_signPhone").value;
     const pass = document.getElementById("INP_signPass").value;
 
     const member = JSON.parse(localStorage.getItem(TP));
 
     if (member)
         showMessage("This TP number has register to our website. Please try again. ")
-    else if (!name || !pass)
+    else if (!name || !pass || !email || !contact)
         showMessage("Empty Input Found! Please try again. ")
     else if (!checkTP(TP))
         showMessage("Invalid TP numbers. ")
     else
     {
-        const m = {name, pass}
+        const m = {name, email, contact, pass}
         localStorage.setItem(TP, JSON.stringify(m));
         alert(`${TP} register sucessful! You can login to our website. `);
         
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
-    clearInputFields(TP,name,pass)
+    clearInputFields(TP,name,email, contact, pass)
 }
 
 function checkTP(TP)
@@ -207,3 +210,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
     scrollToSection(divID); // scroll in to the page
 });
+
+// profile
+function profile() 
+{
+    const name = document.getElementById("h3_userName");
+    const TP = document.getElementById("p_TPnumber");
+    const contact = document.getElementById("p_contact");
+    const email = document.getElementById("p_email");
+
+    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
+
+    name.innerText = `${member.name}`;
+    TP.innerText = `TP Number: ${JSON.parse(localStorage.getItem("login"))}`;
+    contact.innerText = `Contact: ${member.contact}`;
+    email.innerText = `Email: ${member.email}`;
+}
+
+// change password
+function changePass()
+{
+    const TP = document.getElementById("ID_cTP").value.toUpperCase();
+    const oldP = document.getElementById("ID_cOld").value;
+    const newP = document.getElementById("ID_cNewP").value;
+    const confirmP = document.getElementById("ID_cConfirm").value;
+    
+    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
+
+    if (!TP || !oldP || !newP || !confirmP)
+        showMessage("Empty Input Found!")
+    else if (JSON.parse(localStorage.getItem(TP)) == member || oldP != member.pass)
+        showMessage("Wrong TP number or password. ")
+    else if (newP == oldP)
+        showMessage("New Password is same with old password. ")
+    else if (newP != confirmP)
+        showMessage("Confirm password is incorrect. ")
+    else
+    {
+        member.pass = newP
+        localStorage.setItem(TP, JSON.stringify(member))
+        logout()
+    }
+    clearInputFields(TP,oldP,newP,confirmP)
+}

@@ -15,7 +15,7 @@ img {
         margin-top: 20px;
 }
 
-#content {
+.DIV_sign, .DIV_login, .DIV_changePass {
         border: 1px solid black;
         border-radius: 15px;
         width: max-content;

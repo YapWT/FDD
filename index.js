@@ -195,6 +195,13 @@ function faq(questionNum)
         else
             document.getElementById('faq_a9').style.display = 'block';
     }
+    else if (questionNum == 10)
+    {
+        if (window.getComputedStyle(document.getElementById('faq_a10')).display === 'block')
+            document.getElementById('faq_a10').style.display = 'none';
+        else
+            document.getElementById('faq_a10').style.display = 'block';
+    }
 }
 
 // about page, scroll fucntion

@@ -107,6 +107,9 @@ button:hover, #BTN_log:hover {
     border-radius: 15px;
     text-align: auto;
     margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(255, 255, 255, 0.5);
 }
 
 .DIV_profilePic, .DIV_userName, .DIV_tpNcontact, .DIV_email, .DIV_changePass {

@@ -104,6 +104,7 @@ button:hover, #BTN_log:hover {
 .DIV_profile {
     width: 600px;
     border: 1px solid black;
+    border-radius: 15px;
     text-align: auto;
     margin: auto;
 }

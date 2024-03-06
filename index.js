@@ -22,6 +22,7 @@ function clearInputFields(...ids)
 window.onload = function() 
 {
     fetchHeader().then(() => {
+        header();
         loginNlogout();
         sign_upButtonContent();
         profile();
@@ -37,6 +38,19 @@ function fetchHeader()
         })
         .catch(error => console.error('Error fetching header content:', error));
 }
+
+function header() {
+    if (window.location.href.includes('index.html'))
+       document.getElementById('BTN_home').style.backgroundColor = 'rgb(242, 211, 87)';
+
+    else if (window.location.href.includes('activities.html')) 
+       document.getElementById('BTN_act').style.backgroundColor = 'rgb(242, 211, 87)';
+    
+    else if (window.location.href.includes('aboutNcontact.html') || window.location.href.includes('faq.html')) 
+       document.getElementById('BTN_about').style.backgroundColor = 'rgb(242, 211, 87)';
+}
+ 
+
 
 // change the text and function of the login or logout button
 function loginNlogout() 

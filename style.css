@@ -15,11 +15,12 @@ button {
     border: none;
     cursor: pointer;
     font-family: 'Comic Sans MS', cursive;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
 }
 
 button:hover, #BTN_log:hover {
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(242, 211, 87);
     border: none;
 }
 /* header */
@@ -93,9 +94,4 @@ button:hover, #BTN_log:hover {
 
 #BTN_headerRight:hover {
     background-image: url("#");
-}
-
-/**/
-#content {
-    margin-top: 200px;
 }

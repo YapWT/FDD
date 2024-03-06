@@ -15,13 +15,19 @@ img {
         margin-top: 20px;
 }
 
+h1 {
+        text-align: justify;
+        font-size: 30px;
+}
+
 .DIV_sign, .DIV_login, .DIV_changePass {
         border: 1px solid black;
         border-radius: 15px;
         width: max-content;
         margin: auto;
         margin-top: 20px;
-        padding: 100px;
+        padding-right: 80px;
+        padding-left: 80px;
         padding-top: 10px;
         padding-bottom: 30px;
         background-color: rgb(255, 255, 255, 0.5);

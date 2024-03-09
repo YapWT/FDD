@@ -4,7 +4,9 @@ body {
         font-family: Century Gothic;
         margin: auto;
         text-align: justify;
-        background-image: url(#.png);
+        background-image: url("AboutUsBG.png");
+        margin-left: 100px;
+        padding-right: 300px;
 }
 
 #content {
@@ -19,7 +21,15 @@ body {
 }
 
 #h_mission {
-        font-family: Copperplate Gothic;
+        font-size: 400%;
+}
+
+#h_about {
+        font-size: 400%;
+}
+
+#h_values {
+        font-size: 300%;
 }
     
 .faq_a {

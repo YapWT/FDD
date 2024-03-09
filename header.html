@@ -12,25 +12,25 @@
 
             <div class="DIV_headerLeft">
                 <a href="index.html">
-                    <img src="LOGO.png" alt="Campus Wilderness" height="100px"> 
+                    <img src="logo.svg" alt="Cotton Club" height="100px"> 
                 </a>
             </div>
 
             <div class="DIV_headerMiddle">
                 <a href="index.html">
-                    <button class="BTN_home">Home</button>
+                    <button class="BTN_home" id="BTN_home">Home</button>
                 </a>
 
                 <a href="indoor.html">
-                    <button class="BTN_DRP">Activities</button>
+                    <button class="BTN_DRP" id="BTN_act">Activities</button>
                 </a>
 
                 <div class="DIV_dropContent">
-                    <button class="BTN_DRP">About Us</button>
+                    <a href="aboutNcontact.html?section=DIV_about"><button class="BTN_DRP" id="BTN_about">About Us</button></a>
                         <div class="DIV_DRPcontent">
-                            <button onclick="scrollToSection('DIV_about')">About Us</button> <br>
-                            <button onclick="scrollToSection('DIV_contact')">Contact Us</button> <br>
-                            <button onclick="scrollToSection('DIV_faq')">FaQs</button>
+                            <button><a href="aboutNcontact.html?section=DIV_about">About Us</a></button><br>
+                            <button><a href="aboutNcontact.html?section=DIV_contact">Contact Us</a></button><br>
+                            <a href="faq.html"><button>FaQs</button></a>
                         </div>
                 </div>
 
@@ -41,7 +41,7 @@
 
             <div class="DIV_headerRight">
                 <a href="sign_up.html">
-                    <button id="BTN_headerRight">Sign<br>Up</button>
+                    <button id="BTN_headerRight">Sign Up</button>
                 </a>
             </div>
         </div>

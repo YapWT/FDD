@@ -4,9 +4,13 @@ body {
         font-family: Century Gothic;
         margin: auto;
         text-align: justify;
-        background-image: url(BACKGROUND.png);
+        background-image: url(#.png);
 }
-    
+
+#content {
+        margin-left: 20px;
+}
+
 /* faq.html */
 .DIV_faqSection {
         width: 600px;
@@ -29,48 +33,18 @@ body {
 }
     
 #DIV_faq {
-        margin-top: 10%;
-        margin-bottom: 12%;
+        padding-bottom: 50px;
+        padding-top: 50px;
 }
     
 /* about_us.html */
-#DIV_about {
-        text-align: center;
-}
+/* about_us */
 
-.DIV_aboutWhats {
-        margin-left: 60px;
-        margin-right: 60px;
-        text-align: justify;
-}
-    
-.p_about {
-        text-align: justify;
-        width: 500px;
-        margin: auto;
-}
-    
-.h_what {
-        text-align: justify;
-        margin-left: 50px;
-        margin-right: 50px;
-        margin-top: 175px;
-}
-    
-.li_about {
-        text-align: justify;
-        margin-left: 30px;
-}
-    
-.DIV_aboutGet {
-        margin-left: 90px;
-        margin-right: 90px;
-        text-align: justify;
-}
-    
-/* contact_us.html */
+
+/* contact_us */
 #DIV_contact {
-        margin-left: 20px;
+        padding-top: 100px;
+        padding-bottom: 50px;
 }
     
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {

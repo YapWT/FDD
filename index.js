@@ -22,8 +22,10 @@ function clearInputFields(...ids)
 window.onload = function() 
 {
     fetchHeader().then(() => {
+        header();
         loginNlogout();
         sign_upButtonContent();
+        profile();
     });
 };
 
@@ -36,6 +38,19 @@ function fetchHeader()
         })
         .catch(error => console.error('Error fetching header content:', error));
 }
+
+function header() {
+    if (window.location.href.includes('index.html'))
+       document.getElementById('BTN_home').style.backgroundColor = 'rgb(242, 211, 87)';
+
+    else if (window.location.href.includes('activities.html')) 
+       document.getElementById('BTN_act').style.backgroundColor = 'rgb(242, 211, 87)';
+    
+    else if (window.location.href.includes('aboutNcontact.html') || window.location.href.includes('faq.html')) 
+       document.getElementById('BTN_about').style.backgroundColor = 'rgb(242, 211, 87)';
+}
+ 
+
 
 // change the text and function of the login or logout button
 function loginNlogout() 
@@ -67,7 +82,7 @@ function sign_upButtonContent()
     } 
     else 
     {
-        button.innerHTML = `<a href="sign_up.html"><button id="BTN_headerRight">Join<br>Now</button></a>`;
+        button.innerHTML = `<a href="sign_up.html"><button id="BTN_headerRight">Join Now</button></a>`;
     }
 }
 
@@ -93,25 +108,27 @@ function sign_up()
 {
     const TP = document.getElementById("INP_signTP").value.toUpperCase();
     const name = document.getElementById("INP_signName").value;
+    const email = document.getElementById("INP_signEmail").value;
+    const contact = document.getElementById("INP_signPhone").value;
     const pass = document.getElementById("INP_signPass").value;
 
     const member = JSON.parse(localStorage.getItem(TP));
 
     if (member)
         showMessage("This TP number has register to our website. Please try again. ")
-    else if (!name || !pass)
+    else if (!name || !pass || !email || !contact)
         showMessage("Empty Input Found! Please try again. ")
     else if (!checkTP(TP))
         showMessage("Invalid TP numbers. ")
     else
     {
-        const m = {name, pass}
+        const m = {name, email, contact, pass}
         localStorage.setItem(TP, JSON.stringify(m));
         alert(`${TP} register sucessful! You can login to our website. `);
         
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
-    clearInputFields(TP,name,pass)
+    clearInputFields(TP,name,email, contact, pass)
 }
 
 function checkTP(TP)
@@ -192,10 +209,68 @@ function faq(questionNum)
         else
             document.getElementById('faq_a9').style.display = 'block';
     }
+    else if (questionNum == 10)
+    {
+        if (window.getComputedStyle(document.getElementById('faq_a10')).display === 'block')
+            document.getElementById('faq_a10').style.display = 'none';
+        else
+            document.getElementById('faq_a10').style.display = 'block';
+    }
 }
 
-// about
-function scrollToSection(sectionID) 
+// about page, scroll fucntion
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to scroll to the respective sections
+    function scrollToSection(DIV) {
+        document.getElementById(DIV).scrollIntoView({behavior: "smooth"})
+    }
+
+    var s = new URLSearchParams(window.location.search); // window.location.search == ?section=DIV_contact
+    // URLSearchParams got Parameter name: 'section' and Parameter value: 'DIV_contact'
+    var divID = s.get('section'); // s.get('section') return "DIV_contact" then saves it in divID
+
+    scrollToSection(divID); // scroll in to the page
+});
+
+// profile
+function profile() 
 {
-    window.location.href = 'about_us.html#' + sectionID; // Redirect to the specified URL
+    const name = document.getElementById("h3_userName");
+    const TP = document.getElementById("p_TPnumber");
+    const contact = document.getElementById("p_contact");
+    const email = document.getElementById("p_email");
+
+    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
+
+    name.innerText = `${member.name}`;
+    TP.innerText = `TP Number: ${JSON.parse(localStorage.getItem("login"))}`;
+    contact.innerText = `Contact: ${member.contact}`;
+    email.innerText = `Email: ${member.email}`;
+}
+
+// change password
+function changePass()
+{
+    const TP = document.getElementById("ID_cTP").value.toUpperCase();
+    const oldP = document.getElementById("ID_cOld").value;
+    const newP = document.getElementById("ID_cNewP").value;
+    const confirmP = document.getElementById("ID_cConfirm").value;
+    
+    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
+
+    if (!TP || !oldP || !newP || !confirmP)
+        showMessage("Empty Input Found!")
+    else if (JSON.parse(localStorage.getItem(TP)) == member || oldP != member.pass)
+        showMessage("Wrong TP number or password. ")
+    else if (newP == oldP)
+        showMessage("New Password is same with old password. ")
+    else if (newP != confirmP)
+        showMessage("Confirm password is incorrect. ")
+    else
+    {
+        member.pass = newP
+        localStorage.setItem(TP, JSON.stringify(member))
+        logout()
+    }
+    clearInputFields(TP,oldP,newP,confirmP)
 }

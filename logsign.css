@@ -1,5 +1,5 @@
 body {
-        background-image: url("Login_bg.png");
+        background-image: url("SignLogBG.png");
         font-family: Century Gothic;
         text-align: center;
         margin: auto;
@@ -10,7 +10,7 @@ body {
 }
 
 img {
-        width: 200px;
+        width: 400px;
         height: 200px;
         margin-top: 20px;
 }

@@ -75,24 +75,19 @@ body {
         font-family: 'Blueberry';
         padding-top: 80px;
 }
-
-.h_join {
-        font-family: 'Blueberry';
-        padding-top: 80px;
-}
-
-.h_our {
-        font-family: 'Blueberry';
-        padding-top: 80px;
-}
     
     
     /* contact_us */
 #DIV_contact {
-        padding-top: 150px;
+        padding-top: 70px;
         padding-bottom: 50px;
 }
-    
+
+.h_get, .h_join, .h_our {
+        font-family: 'Blueberry';
+        padding-top: 80px;
+}
+
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {
         display: flex;
 }

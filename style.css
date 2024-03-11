@@ -23,15 +23,12 @@ button:hover, #BTN_log:hover {
     background-color: rgb(242, 211, 87);
     border: none;
 }
-/* header */
-* {
-    box-sizing: border-box;
-}
 
-.DIV_stickyHeader {
+header {
     padding: 10px;
     position: fixed;
     top: 0;
+    left: 0px;
     width: 100%;
     display: flex;
     justify-content: space-between; 
@@ -95,3 +92,4 @@ button:hover, #BTN_log:hover {
 #BTN_headerRight:hover {
     background-image: url("#");
 }
+

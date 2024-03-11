@@ -1,35 +1,21 @@
-body {
+
+main {
         margin: 0;
         padding: 0;
         font-family: Century Gothic;
         margin: auto;
         text-align: justify;
         background-image: url("AboutUsBG.png");
-        margin-left: 100px;
+        padding-left: 100px;
         padding-right: 300px;
+        padding-top: 100px;
 }
-
-#content {
-        margin-left: 20px;
-}
-
-/* faq.html */
+    
+    /* faq.html */
 .DIV_faqSection {
         width: 600px;
         text-align: center;
         margin: auto;
-}
-
-#h_mission {
-        font-size: 400%;
-}
-
-#h_about {
-        font-size: 400%;
-}
-
-#h_values {
-        font-size: 300%;
 }
     
 .faq_a {
@@ -44,14 +30,25 @@ body {
     
 #DIV_faq {
         padding-bottom: 50px;
-        padding-top: 50px;
 }
     
-/* about_us.html */
-/* about_us */
-
-
-/* contact_us */
+    /* about_us */
+    
+#h_mission {
+        font-size: 400%;
+}   
+    
+#h_about {
+        font-size: 400%;
+        display: inline-flex;
+}
+    
+#h_values {
+        font-size: 300%;
+}
+    
+    
+    /* contact_us */
 #DIV_contact {
         padding-top: 100px;
         padding-bottom: 50px;

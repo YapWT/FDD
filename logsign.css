@@ -20,7 +20,7 @@ h1 {
         font-size: 30px;
 }
 
-.DIV_sign, .DIV_login, .DIV_changePass {
+main {
         border: 1px solid black;
         border-radius: 15px;
         width: max-content;

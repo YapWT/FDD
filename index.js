@@ -26,18 +26,46 @@ window.onload = function()
         loginNlogout();
         sign_upButtonContent();
         profile();
-    });
+    })
 };
 
-function fetchHeader() 
-{
-    return fetch('header.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('header').innerHTML = html;
-        })
-        .catch(error => console.error('Error fetching header content:', error));
+function fetchHeader() {
+    var xhr = new XMLHttpRequest();
+
+    // Open a GET request to fetch the header content
+    xhr.open('GET', 'header.html', true);
+
+    // Define what happens on successful load
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var tempDiv = document.createElement('div');
+
+            // Set the response content as innerHTML of the div
+            tempDiv.innerHTML = xhr.responseText;
+
+            // Find the header element inside the temporary div
+            var headerElement = tempDiv.querySelector('header');
+
+            // Get the container element where you want to insert the header
+            var container = document.getElementById('header');
+
+            container.appendChild(headerElement);
+        } 
+    };
+
+    // Handle errors
+    xhr.onerror = function() {
+        console.error('Network error while loading header');
+    };
+
+    // Send the request
+    xhr.send();
 }
+
+
+
+
+
 
 function header() {
     if (window.location.href.includes('index.html'))
@@ -49,8 +77,6 @@ function header() {
     else if (window.location.href.includes('aboutNcontact.html') || window.location.href.includes('faq.html')) 
        document.getElementById('BTN_about').style.backgroundColor = 'rgb(242, 211, 87)';
 }
- 
-
 
 // change the text and function of the login or logout button
 function loginNlogout() 
@@ -231,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     scrollToSection(divID); // scroll in to the page
 });
+
 
 // profile
 function profile() 

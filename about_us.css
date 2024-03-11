@@ -5,10 +5,13 @@ main {
         font-family: Century Gothic;
         margin: auto;
         text-align: justify;
-        background-image: url("AboutUsBG.png");
         padding-left: 100px;
         padding-right: 300px;
         padding-top: 100px;
+}
+
+body {
+        background-image: url("AboutUsBG.png");
 }
     
     /* faq.html */

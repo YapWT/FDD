@@ -62,11 +62,6 @@ function fetchHeader() {
     xhr.send();
 }
 
-
-
-
-
-
 function header() {
     if (window.location.href.includes('index.html'))
        document.getElementById('BTN_home').style.backgroundColor = 'rgb(242, 211, 87)';

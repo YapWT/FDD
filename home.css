@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Blueberry';
+    src: url('Blueberry\ .ttf');
+}
+
+main {
+    padding-top: 125px;
+}
+
+/*  */
+/* .IMG_homeTitle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} */
+
+.DIV_homeTitle {
+    background-image: url("home.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 900px ;
+}
+
+/*  */
+
+.DIV_homeWelcome {
+    text-align: center;
+    background-image: url("homeBG3.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.h_homeWelcome {
+    font-family: 'Blueberry';
+    text-align: center;
+}
+
+.DIV_homeWelcome2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 800px;
+    text-align: justify;
+    margin: auto;
+}
+
+.p_homeWelcome {
+    margin-bottom: 0;
+}
+
+/*  */
+.h_homeAct {
+    text-align: center;
+    font-size: 400%;
+    padding-top: 20px;
+    margin: 0;
+    font-family: 'Blueberry';
+}
+
+.DIV_homeAct {
+    background-image: url("homeBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 90px;
+    padding-top: 30px;
+}
+
+.h_homeMRG {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.DIV_homeAct1 {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    width: 750px;
+}
+
+.DIV_homeMRG {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.536);
+    border-radius: 20px;
+}
+
+.IMG_homeMRG {
+    border-radius: 10px;
+    border-start-end-radius: 20px;
+    border-start-start-radius: 20px;
+}
+
+.BTN_homeBTN {
+    width: 195px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(128, 128, 128, 0.589);
+}
+
+/*  */
+.DIV_homeReview {
+    padding-top: 250px;
+    padding-bottom: 200px;
+    text-align: center;
+    background-image: url("reviewBG.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.p_homeReview {
+    text-align: justify;
+    width: 600px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+/*  */
+.DIV_homeFooter {
+    text-align: center;
+    margin: auto;
+    background-image: url("footerBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 20px;
+    padding-top: 80px;
+}
+
+.p_homeFooter {
+    width: 500px;
+    text-align: justify;
+    margin: auto;
+    padding-bottom: 75px;
+}
+
+.DIV_homeLogoss {
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+
+.DIV_homeSocialMediaLogo {
+    right: 0;
+    margin: auto;
+    margin-right: 0;
+}
+
+.DIV_homeAPUlogo {
+    left: 0;
+    margin: auto;
+    margin-left: 0;
+}
+
+.IMG_footerLogo {
+    width: 30%;
+    padding-bottom: 20px;
+}
+
+.DIV_footerF {
+    text-align: justify;
+    padding-left: 10px;
+}
+
+.DIV_homePrivacy {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.DIV_footerABC {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    text-align: justify;
+    font-size: smaller;
+}
+
+.IMG_footerSocialMedia {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 30px;
+}

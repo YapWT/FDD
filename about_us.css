@@ -1,3 +1,7 @@
+@font-face {
+        font-family: 'Blueberry';
+        src: url('Blueberry\ .ttf');
+}
 
 main {
         margin: 0;
@@ -6,15 +10,28 @@ main {
         margin: auto;
         text-align: justify;
         padding-left: 100px;
-        padding-right: 300px;
+        padding-right: 100px;
         padding-top: 100px;
 }
 
 body {
         background-image: url("AboutUsBG.png");
 }
-    
+
+.hhhh {
+        font-family: 'Blueberry';
+}
+
     /* faq.html */
+.hhhh_faq {
+        font-family: 'Blueberry';
+        padding-top: 15%;
+}
+
+.ul_faq {
+        cursor: pointer;
+}
+
 .DIV_faqSection {
         width: 600px;
         text-align: center;
@@ -36,24 +53,43 @@ body {
 }
     
     /* about_us */
-    
+#DIV_about {
+        width: 800px;
+        margin: 0;
+}
+
 #h_mission {
         font-size: 400%;
+        font-family: 'Blueberry';
+        padding-top: 80px;
 }   
     
 #h_about {
         font-size: 400%;
         display: inline-flex;
+        font-family: 'Blueberry';
 }
     
 #h_values {
         font-size: 300%;
+        font-family: 'Blueberry';
+        padding-top: 80px;
+}
+
+.h_join {
+        font-family: 'Blueberry';
+        padding-top: 80px;
+}
+
+.h_our {
+        font-family: 'Blueberry';
+        padding-top: 80px;
 }
     
     
     /* contact_us */
 #DIV_contact {
-        padding-top: 100px;
+        padding-top: 150px;
         padding-bottom: 50px;
 }
     

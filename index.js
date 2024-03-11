@@ -19,14 +19,12 @@ function clearInputFields(...ids)
 }
 
 // fetch the header then run other program
-window.onload = function() 
-{
-    fetchHeader().then(() => {
-        header();
-        loginNlogout();
-        sign_upButtonContent();
-        profile();
-    })
+window.onload = function() {
+    fetchHeader()
+    header();
+    loginNlogout();
+    sign_upButtonContent();
+    profile();
 };
 
 function fetchHeader() {
@@ -293,6 +291,7 @@ function changePass()
         member.pass = newP
         localStorage.setItem(TP, JSON.stringify(member))
         logout()
+        window.location.href = "login.html"
     }
     clearInputFields(TP,oldP,newP,confirmP)
 }

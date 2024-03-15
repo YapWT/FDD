@@ -1,5 +1,9 @@
 main {
     padding-top: 125px;
+    background-image: url("profileBG.png");
+    background-size: 100%;
+    padding: 300px;
+    padding-bottom: 200px;
 }
 
 .DIV_profile {

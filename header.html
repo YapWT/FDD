@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="style.css">
+
     </head>
 
     <body>
         <header>
             <link rel="stylesheet" href="style.css">
+
             <div class="DIV_headerLeft">
                 <a href="index.html">
                     <img src="Cotton Logo.png" alt="Cotton Club" height="100px"> 
@@ -21,16 +22,22 @@
                     <button class="BTN_home" id="BTN_home">Home</button>
                 </a>
 
-                <a href="activities.html">
-                    <button class="BTN_DRP" id="BTN_act">Activities</button>
-                </a>
+                <div class="DIV_dropContent">
+                    <a href="activities.html?section=DIV_mirrorS"><button class="BTN_DRP" id="BTN_act">Activities</button></a>
+                    <div class="DIV_DRPcontent">
+                        <button class="BTN_dropContant"><a href="activities.html?section=DIV_mirrorS">Mirror Tufting</a></button>
+                        <button class="BTN_dropContant"><a href="activities.html?section=DIV_rugS">Rug Tufting</a></button>
+                        <button class="BTN_dropContant"><a href="activities.html?section=DIV_groupS">Group Tufting</a></button>
+                    </div>
+                </div>
 
                 <div class="DIV_dropContent">
                     <a href="aboutNcontact.html?section=DIV_about"><button class="BTN_DRP" id="BTN_about">About Us</button></a>
                         <div class="DIV_DRPcontent">
-                            <button><a href="aboutNcontact.html?section=DIV_about">About Us</a></button><br>
-                            <button><a href="aboutNcontact.html?section=DIV_contact">Contact Us</a></button><br>
-                            <a href="faq.html"><button>FaQs</button></a>
+                            <button class="BTN_dropContant2"><a href="aboutNcontact.html?section=DIV_about">About Us</a></button>
+                            <button class="BTN_dropContant2"><a href="aboutNcontact.html?section=DIV_contact">Contact Us</a></button>
+                            <button class="BTN_dropContant2"><a href="faq.html">FaQs</a></button>
+                            <button class="BTN_dropContant2" onclick="loginStatus()"><a href="#feedback.html">Feedback</a></button>
                         </div>
                 </div>
 
@@ -44,7 +51,8 @@
                     <button id="BTN_headerRight">Sign Up</button>
                 </a>
             </div>
+
+            <script src="index.js"></script>
         </header>
-        <script src="index.js"></script>
     </body>
 </html>

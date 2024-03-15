@@ -3,6 +3,11 @@
         src: url('Blueberry\ .ttf');
 }
 
+@font-face {
+        font-family: "Bantayog";
+        src: url("Bantayog-Regular.woff2");
+}
+
 main {
         margin: 0;
         padding: 0;
@@ -11,11 +16,11 @@ main {
         text-align: justify;
         padding-left: 100px;
         padding-right: 100px;
-        padding-top: 100px;
+        padding-top: 150px;
 }
 
 body {
-        background-image: url("AboutUsBG.png");
+        background-image: url("aboutBG2.png");
 }
 
 .hhhh {
@@ -105,4 +110,56 @@ body {
         margin-left: auto; 
 }
     
-    
+/* feedback */
+.DIV_feedback {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        padding-left: 80px;
+        padding-right: 80px;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.741);
+        border-radius: 5px;
+        width: max-content;
+        text-align: center;
+        margin: auto;
+        background-color: rgb(255, 255, 255, 0.5);
+}
+
+.h_feedback {
+        text-align: justify;
+        font-size: 30px;
+        font-family: 'Bantayog';
+}
+
+#TXT {
+        width: 350px;
+        height: 300px;
+        resize: none;
+        font-size: medium;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.726);
+        font-family: Century Gothic;
+}
+
+input {
+        font-family: Century Gothic;
+}
+
+.BTN_feedback {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100px;
+        height: 30px;
+        /* font-family: Century Gothic; */
+        font-family: "Bantayog";
+        font-size: larger;
+        font-weight: 1000;
+        background-color: rgba(255, 255, 255, 0.507);
+        cursor: pointer;
+}
+
+.BTN_feedback:hover {
+        background-color: rgba(128, 128, 128, 0.507);
+        border: none;
+}

@@ -20,11 +20,11 @@ function clearInputFields(...ids)
 
 // fetch the header then run other program
 window.onload = function() {
-    fetchHeader()
-    header();
-    loginNlogout();
-    sign_upButtonContent();
-    profile();
+    var page = ["aboutNcontact.html", "activities.html", "feedback.html", "index.html", "profile.html", "faq.html"];
+    
+    if (page.some(p => page.includes(p)))
+        fetchHeader()
+
 };
 
 function fetchHeader() {
@@ -48,6 +48,10 @@ function fetchHeader() {
             var container = document.getElementById('header');
 
             container.appendChild(headerElement);
+            header();
+            sign_upButtonContent();
+            loginNlogout();
+            profile();
         } 
     };
 
@@ -61,14 +65,16 @@ function fetchHeader() {
 }
 
 function header() {
-    if (window.location.href.includes('index.html'))
-       document.getElementById('BTN_home').style.backgroundColor = 'rgb(242, 211, 87)';
+    var currentPage = window.location.href;
 
-    else if (window.location.href.includes('activities.html')) 
-       document.getElementById('BTN_act').style.backgroundColor = 'rgb(242, 211, 87)';
+    if (currentPage.includes('index.html'))
+       document.getElementById('BTN_home').style.backgroundColor = 'rgb(191,226,255)';
+
+    else if (currentPage.includes('activities.html')) 
+       document.getElementById('BTN_act').style.backgroundColor = 'rgb(191,226,255)';
     
-    else if (window.location.href.includes('aboutNcontact.html') || window.location.href.includes('faq.html')) 
-       document.getElementById('BTN_about').style.backgroundColor = 'rgb(242, 211, 87)';
+    else if (currentPage.includes('aboutNcontact.html') || currentPage.includes('faq.html') || currentPage.includes('feedback.html')) 
+       document.getElementById('BTN_about').style.backgroundColor = 'rgb(191,226,255)';
 }
 
 // change the text and function of the login or logout button
@@ -100,9 +106,7 @@ function sign_upButtonContent()
         button.style.fontSize = 'medium';
     } 
     else 
-    {
-        button.innerHTML = `<a href="sign_up.html"><button id="BTN_headerRight">Join Now</button></a>`;
-    }
+        button.innerHTML = `<a href="sign_up.html"><button id="BTN_headerRight">Sign Up</button></a>`;
 }
 
 // login.html
@@ -118,7 +122,11 @@ function login()
         localStorage.setItem("login", JSON.stringify(TP));
         window.location.href = 'index.html';
     } else
+    {
         showMessage("Invalid TP number or password. Please try again. ")
+        document.getElementById("INP_loginPass").value = ""
+    }
+        
 
 }
 
@@ -248,24 +256,27 @@ document.addEventListener("DOMContentLoaded", function() {
     // URLSearchParams got Parameter name: 'section' and Parameter value: 'DIV_contact'
     var divID = s.get('section'); // s.get('section') return "DIV_contact" then saves it in divID
 
-    scrollToSection(divID); // scroll in to the page
+    if (divID)
+        scrollToSection(divID); // scroll in to the page
 });
 
 
 // profile
 function profile() 
 {
-    const name = document.getElementById("h3_userName");
-    const TP = document.getElementById("p_TPnumber");
-    const contact = document.getElementById("p_contact");
-    const email = document.getElementById("p_email");
-
     const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
-
-    name.innerText = `${member.name}`;
-    TP.innerText = `TP Number: ${JSON.parse(localStorage.getItem("login"))}`;
-    contact.innerText = `Contact: ${member.contact}`;
-    email.innerText = `Email: ${member.email}`;
+    if (member)
+    {
+        const name = document.getElementById("h3_userName");
+        const TP = document.getElementById("p_TPnumber");
+        const contact = document.getElementById("p_contact");
+        const email = document.getElementById("p_email");
+    
+        name.innerText = `${member.name}`;
+        TP.innerText = `TP Number: ${JSON.parse(localStorage.getItem("login"))}`;
+        contact.innerText = `Contact: ${member.contact}`;
+        email.innerText = `Email: ${member.email}`;
+    }
 }
 
 // change password
@@ -294,4 +305,24 @@ function changePass()
         window.location.href = "login.html"
     }
     clearInputFields(TP,oldP,newP,confirmP)
+}
+
+// feedback
+function feedback()
+{
+    const feedback = document.getElementById("TXT").value;
+    if (feedback != "")
+    {
+        showMessage("We had receive your feeback! Thank You!");
+        document.getElementById("TXT").value = "";
+    }
+
+}
+
+function loginStatus()
+{
+    if (localStorage.getItem("login"))
+        window.location.href = "feedback.html";
+    else
+        window.location.href = "login.html";
 }

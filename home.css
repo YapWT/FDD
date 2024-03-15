@@ -5,15 +5,10 @@
 
 main {
     padding-top: 125px;
+    font-family: 'Comic Sans MS', cursive;
 }
 
 /*  */
-/* .IMG_homeTitle {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-} */
-
 .DIV_homeTitle {
     background-image: url("home.png");
     background-size: cover;
@@ -52,6 +47,7 @@ main {
     text-align: center;
     font-size: 400%;
     padding-top: 20px;
+    padding-bottom: 25px;
     margin: 0;
     font-family: 'Blueberry';
 }
@@ -96,11 +92,12 @@ main {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: rgba(128, 128, 128, 0.589);
+    font-family: 'Comic Sans MS', cursive;
 }
 
 /*  */
 .DIV_homeReview {
-    padding-top: 250px;
+    padding-top: 300px;
     padding-bottom: 200px;
     text-align: center;
     background-image: url("reviewBG.png");
@@ -131,6 +128,7 @@ main {
     text-align: justify;
     margin: auto;
     padding-bottom: 75px;
+    font-size: smaller;
 }
 
 .DIV_homeLogoss {

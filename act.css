@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Blueberry';
+    src: url('Blueberry\ .ttf');
+}
+
+@font-face {
+    font-family: "Bantayog";
+    src: url("Bantayog-Regular.woff2");
+}
+
+main {
+    padding-top: 50px;
+}
+
+#DIV_mirrorS {
+    background-image: url("mirror.png");
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+}
+
+#DIV_rugS {
+    background-image: url("rug.png");
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+    margin-top: -40px;
+}
+
+#DIV_groupS {
+    background-image: url("group.png");
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+    margin-top: -40px;
+}
+
+.p_act {
+    padding-top: 500px;
+    padding-left: 100px;
+    font-size: 150%;
+    font-family: "Comic San MS", cursive;
+}
+
+.DIV_info {
+    display: flex;
+    padding-left: 100px;
+    padding-top: 10px;
+    text-align: justify;
+}
+

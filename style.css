@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Bantayog";
+    src: url("Bantayog-Regular.woff2");
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', cursive;
     margin: auto;
     text-align: justify;
 }
@@ -11,16 +15,20 @@ a {
     color: black;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 button {
     border: none;
     cursor: pointer;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: "Bantayog";
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
 }
 
 button:hover, #BTN_log:hover {
-    background-color: rgb(242, 211, 87);
+    background-color: rgb(191,226,255);
     border: none;
 }
 
@@ -49,9 +57,11 @@ header {
 
 .BTN_home, #BTN_log, .BTN_DRP {
     background-color: transparent;
-    font-size: x-large;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-size: xx-large;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 5px;
+    width: 150px;
 }
 
 .DIV_dropContent {
@@ -64,16 +74,30 @@ header {
     position: absolute;
     padding-left: 75px;
     z-index: 1;
-    font-size: small;
+    margin: 0;
+    background-color: transparent;
 }
 
 .DIV_DRPcontent a {
     display: block;
-    text-align: right;
+    text-align: left;
+    font-size: medium;
+    margin: 0;
+    padding: 2px;
 }
 
 .DIV_dropContent:hover .DIV_DRPcontent {
     display: block;
+}
+
+.BTN_dropContant2 {
+    width: 100px;
+    border-radius: 0px;
+}
+
+.BTN_dropContant {
+    width: 150px;
+    border-radius: 0px;
 }
 
 .DIV_headerRight {

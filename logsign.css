@@ -1,7 +1,7 @@
 @font-face {
-        font-family: 'Blueberry';
-        src: url('Blueberry\ .ttf');
-    }
+        font-family: "Bantayog";
+        src: url("Bantayog-Regular.woff2");
+}
 
 body {
         background-image: url("SignLogBG.png");
@@ -23,7 +23,7 @@ img {
 h1 {
         text-align: justify;
         font-size: 30px;
-        font-family: 'Blueberry';
+        font-family: 'Bantayog';
 }
 
 main {
@@ -54,7 +54,8 @@ button {
         border-radius: 5px;
         width: 100px;
         height: 30px;
-        font-family: Century Gothic;
+        /* font-family: Century Gothic; */
+        font-family: "Bantayog";
         font-size: larger;
         font-weight: 1000;
         background-color: rgba(255, 255, 255, 0.507);
@@ -63,6 +64,7 @@ button {
 
 button:hover {
         background-color: rgba(128, 128, 128, 0.507);
+        border: none;
 }
 
 button:active {

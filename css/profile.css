@@ -1,17 +1,22 @@
 main {
-    padding-top: 125px;
-    background-image: url("profileBG.png");
+    display: flex;
+    align-items: center; /*X*/
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("/BG/profileBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-size: 100%;
     padding: 300px;
-    padding-bottom: 200px;
+    width: 100%;
+    height: 100vh;
 }
 
 .DIV_profile {
     width: 600px;
     border: 1px solid black;
     border-radius: 15px;
-    text-align: auto;
-    margin: auto;
+    text-align: justify;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: rgb(255, 255, 255, 0.5);

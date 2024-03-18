@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Blueberry';
-    src: url('Blueberry\ .ttf');
+    src: url('/font-family/Blueberry.ttf');
 }
 
 main {
@@ -10,19 +10,26 @@ main {
 
 /*  */
 .DIV_homeTitle {
-    background-image: url("home.png");
+    background-image: url("/BG/home.png");
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 900px ;
+    width: 100%;
+    height: 100vh; 
+    /* vh = viewport height */
 }
 
 /*  */
 
 .DIV_homeWelcome {
-    text-align: center;
-    background-image: url("homeBG3.png");
+    display: flex;
+    justify-content: center; /*Y*/
+    align-items: center; /*X*/
+    flex-direction: column;
+    background-image: url("/BG/homeBG2.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
 }
 
 .h_homeWelcome {
@@ -30,34 +37,32 @@ main {
     text-align: center;
 }
 
-.DIV_homeWelcome2 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.p_child {
+    text-align: center;
     width: 800px;
-    text-align: justify;
-    margin: auto;
 }
 
 .p_homeWelcome {
-    margin-bottom: 0;
+    text-align: justify;
 }
 
 /*  */
+.DIV_homeAct {
+    display: flex;
+    align-items: center; /*X*/
+    flex-direction: column;
+    background-image: url("/BG/homeBG.png");
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
 .h_homeAct {
     text-align: center;
     font-size: 400%;
-    padding-top: 20px;
-    padding-bottom: 25px;
-    margin: 0;
     font-family: 'Blueberry';
-}
-
-.DIV_homeAct {
-    background-image: url("homeBG.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 90px;
-    padding-top: 30px;
 }
 
 .h_homeMRG {
@@ -69,7 +74,7 @@ main {
 .DIV_homeAct1 {
     display: flex;
     text-align: center;
-    margin: auto;
+    margin: 0;
     width: 750px;
 }
 
@@ -97,12 +102,19 @@ main {
 
 /*  */
 .DIV_homeReview {
-    padding-top: 300px;
-    padding-bottom: 200px;
-    text-align: center;
-    background-image: url("reviewBG.png");
+    display: flex;
+    align-items: center; /*X*/
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("/BG/reviewBG.png");
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.DIV_reviewParent {
+    text-align: center;
 }
 
 .p_homeReview {
@@ -114,27 +126,32 @@ main {
 
 /*  */
 .DIV_homeFooter {
-    text-align: center;
-    margin: auto;
-    background-image: url("footerBG.png");
+    display: flex;
+    align-items: center; /*X*/
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("/BG/footerBG.png");
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 20px;
-    padding-top: 80px;
+    width: 100%;
+    height: 100vh;
+}
+
+.DIV_footerParent {
+    height: 60%;
 }
 
 .p_homeFooter {
     width: 500px;
     text-align: justify;
-    margin: auto;
-    padding-bottom: 75px;
+    padding-bottom: 50px;
     font-size: smaller;
+    margin: 0;
 }
 
 .DIV_homeLogoss {
     display: flex;
     width: 600px;
-    margin: auto;
 }
 
 .DIV_homeSocialMediaLogo {
@@ -151,7 +168,8 @@ main {
 
 .IMG_footerLogo {
     width: 30%;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .DIV_footerF {
@@ -168,7 +186,7 @@ main {
 .DIV_footerABC {
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 40px;
+    padding-top: 50px;
     text-align: justify;
     font-size: smaller;
 }

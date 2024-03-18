@@ -1,23 +1,26 @@
 @font-face {
         font-family: "Bantayog";
-        src: url("Bantayog-Regular.woff2");
+        src: url("/font-family/Bantayog-Regular.woff2");
 }
 
 body {
-        background-image: url("SignLogBG.png");
+        background-image: url("/BG/SignLogBG.png");
         font-family: Century Gothic;
         text-align: center;
-        margin: auto;
-        margin-bottom: 100px;
+        display: flex;
+        align-items: center; /*X*/
+        justify-content: center;
+        flex-direction: column;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        width: 100%;
+        height: 100vh;
 }
 
 img {
         width: 400px;
         height: 200px;
-        margin-top: 20px;
 }
 
 h1 {
@@ -30,7 +33,6 @@ main {
         border: 1px solid black;
         border-radius: 15px;
         width: max-content;
-        margin: auto;
         margin-top: 20px;
         padding-right: 80px;
         padding-left: 80px;

@@ -175,74 +175,97 @@ function faq(questionNum)
 {
     if (questionNum == 1)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a1')).display === 'block')
-            document.getElementById('faq_a1').style.display = 'none'; 
+        if (window.getComputedStyle(document.getElementById('faq_a1')).visibility  === 'visible')
+            document.getElementById('faq_a1').style.visibility  = 'hidden'; 
         else
-            document.getElementById('faq_a1').style.display = 'block';
+            document.getElementById('faq_a1').style.visibility  = 'visible';
     }
     else if (questionNum == 2)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a2')).display === 'block')
-            document.getElementById('faq_a2').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a2')).visibility  === 'visible')
+            document.getElementById('faq_a2').style.visibility  = 'hidden';
         else
-            document.getElementById('faq_a2').style.display = 'block';
+            document.getElementById('faq_a2').style.visibility  = 'visible';
     }
     else if (questionNum == 3)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a3')).display === 'block')
-        document.getElementById('faq_a3').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a3')).visibility  === 'visible')
+        document.getElementById('faq_a3').style.visibility  = 'hidden';
         else
-        document.getElementById('faq_a3').style.display = 'block';
+        document.getElementById('faq_a3').style.visibility  = 'visible';
     }
     else if (questionNum == 4)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a4')).display === 'block')
-        document.getElementById('faq_a4').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a4')).visibility  === 'visible')
+        document.getElementById('faq_a4').style.visibility  = 'hidden';
         else
-        document.getElementById('faq_a4').style.display = 'block';
+        document.getElementById('faq_a4').style.visibility  = 'visible';
     }
     else if (questionNum == 5)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a5')).display === 'block')
-            document.getElementById('faq_a5').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a5')).visibility  === 'visible')
+            document.getElementById('faq_a5').style.visibility  = 'hidden';
         else
-            document.getElementById('faq_a5').style.display = 'block';
+            document.getElementById('faq_a5').style.visibility  = 'visible';
     }
     else if (questionNum == 6)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a6')).display === 'block')
-            document.getElementById('faq_a6').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a6')).visibility  === 'visible')
+            document.getElementById('faq_a6').style.visibility  = 'hidden';
         else
-            document.getElementById('faq_a6').style.display = 'block';
+            document.getElementById('faq_a6').style.visibility  = 'visible';
     }
     else if (questionNum == 7)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a7')).display === 'block')
-        document.getElementById('faq_a7').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a7')).visibility  === 'visible')
+        document.getElementById('faq_a7').style.visibility  = 'hidden';
         else
-        document.getElementById('faq_a7').style.display = 'block';
+        document.getElementById('faq_a7').style.visibility  = 'visible';
     }
     else if (questionNum == 8)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a8')).display === 'block')
-            document.getElementById('faq_a8').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a8')).visibility  === 'visible')
+            document.getElementById('faq_a8').style.visibility  = 'hidden';
         else
-            document.getElementById('faq_a8').style.display = 'block';
+            document.getElementById('faq_a8').style.visibility  = 'visible';
     }
     else if (questionNum == 9)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a9')).display === 'block')
-            document.getElementById('faq_a9').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a9')).visibility  === 'visible')
+            document.getElementById('faq_a9').style.visibility  = 'hidden';
         else
-            document.getElementById('faq_a9').style.display = 'block';
+            document.getElementById('faq_a9').style.visibility  = 'visible';
     }
     else if (questionNum == 10)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a10')).display === 'block')
-            document.getElementById('faq_a10').style.display = 'none';
+        if (window.getComputedStyle(document.getElementById('faq_a10')).visibility  === 'visible')
+            document.getElementById('faq_a10').style.visibility  = 'hidden';
         else
-            document.getElementById('faq_a10').style.display = 'block';
+            document.getElementById('faq_a10').style.visibility  = 'visible';
     }
+}
+
+function hideAns(num) {
+    if (num == 1)
+        document.getElementById('faq_a1').style.visibility  = 'hidden';
+    else if (num == 2)
+        document.getElementById('faq_a2').style.visibility  = 'hidden';
+    else if (num == 3)
+        document.getElementById('faq_a3').style.visibility  = 'hidden';
+    else if (num == 4)
+        document.getElementById('faq_a4').style.visibility  = 'hidden';
+    else if (num == 5)
+        document.getElementById('faq_a5').style.visibility  = 'hidden';
+    else if (num == 6)
+        document.getElementById('faq_a6').style.visibility  = 'hidden';
+    else if (num == 7)
+        document.getElementById('faq_a7').style.visibility  = 'hidden';
+    else if (num == 8)
+        document.getElementById('faq_a8').style.visibility  = 'hidden';
+    else if (num == 9)
+        document.getElementById('faq_a9').style.visibility  = 'hidden';
+    else if (num == 10)
+        document.getElementById('faq_a10').style.visibility  = 'hidden';
 }
 
 // about page, scroll fucntion

@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Blueberry';
-    src: url('Blueberry\ .ttf');
+    src: url('/font-family/Blueberry.ttf');
 }
 
 @font-face {
     font-family: "Bantayog";
-    src: url("Bantayog-Regular.woff2");
+    src: url("/font-family/Bantayog-Regular.woff2");
 }
 
 main {
@@ -13,7 +13,7 @@ main {
 }
 
 #DIV_mirrorS {
-    background-image: url("mirror.png");
+    background-image: url("/BG/mirrorBG.png");
     padding-bottom: 100px;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -21,7 +21,7 @@ main {
 }
 
 #DIV_rugS {
-    background-image: url("rug.png");
+    background-image: url("/BG/rugBG.png");
     padding-bottom: 100px;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -30,7 +30,7 @@ main {
 }
 
 #DIV_groupS {
-    background-image: url("group.png");
+    background-image: url("/BG/groupBG.png");
     padding-bottom: 100px;
     background-repeat: no-repeat;
     background-size: 100%;

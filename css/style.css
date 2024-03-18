@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Bantayog";
-    src: url("Bantayog-Regular.woff2");
+    src: url("/font-family/Bantayog-Regular.woff2");
 }
 
 body {
@@ -108,12 +108,6 @@ header {
     width: 150px;
     height: 100px;
     font-size: xx-large;
-    background-image: url("#");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-#BTN_headerRight:hover {
-    background-image: url("#");
-}
-

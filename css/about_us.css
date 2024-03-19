@@ -6,13 +6,10 @@
 main {
         margin: 0;
         padding: 0;
-        font-family: c;
         margin: auto;
-        text-align: justify;
-        padding-left: 100px;
-        padding-right: 100px;
-        padding-top: 125px;
+        text-align: center;
         font-family: 'Comic Sans MS', cursive;
+        padding-bottom: 50px;
 }
 
 body {
@@ -21,59 +18,65 @@ body {
 
 .hhhh {
         font-family: 'Blueberry';
+        padding-top: 5%;
 }
 
-    
-    /* about_us */
+.hhhh1 {
+        font-family: 'Blueberry';
+        padding-top: 40%;
+        font-size: 80px;
+}
+
+ul {
+        display: grid; 
+        justify-content: center;
+}
+
+li {
+        text-align: justify;
+}
+
+.p_ac {
+        display: grid;
+        text-align: justify;
+        justify-content: center;
+}
+/* aboutus */
 #DIV_about {
-        width: 800px;
-        margin: 0;
-}
-
-#h_mission {
-        font-size: 400%;
-        font-family: 'Blueberry';
-        padding-top: 80px;
-}   
-    
-#h_about {
-        font-size: 400%;
-        display: inline-flex;
-        font-family: 'Blueberry';
+        width: 50%;
+        text-align: center;
+        margin: auto;
 }
     
-#h_values {
-        font-size: 300%;
-        font-family: 'Blueberry';
-        padding-top: 80px;
-}
-    
-    
-    /* contact_us */
-#DIV_contact {
-        padding-top: 70px;
-        padding-bottom: 50px;
-}
-
-.h_get, .h_join, .h_our {
-        font-family: 'Blueberry';
-        padding-top: 80px;
+/* contact_us */
+.DIV_contact1 {
+        width: 50%;
+        text-align: center;
+        margin: auto;
 }
 
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {
         display: flex;
+        padding: 0;
+        margin: 0;
 }
     
 .DIV_Cgeneral, .DIV_Cvisit, .DIV_Cclub, .DIV_Coffice {
         position: relative;
+        margin: 0 auto;
+        padding: 0;
+}
+
+.DIV_connect2 {
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+}
+
+.DIV_img {
         flex: 1;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
 }
-    
-.DIV_Cclub, .DIV_Coffice {
-        margin-right: auto; 
-}
-    
-.DIV_Cgeneral, .DIV_Cvisit {
-        margin-left: auto; 
-}
-    

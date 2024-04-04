@@ -10,14 +10,6 @@ function showMessage(message)
     }, 5000); // 5000 milliseconds = 5 seconds
 }
 
-function clearInputFields(...ids) 
-{
-    ids.forEach(id => 
-    {
-      document.getElementById(id).value = '';
-    });
-}
-
 // fetch the header then run other program
 window.onload = function() {
     var page = ["aboutNcontact.html", "activities.html", "feedback.html", "index.html", "profile.html", "faq.html"];
@@ -48,7 +40,6 @@ function fetchHeader() {
 
             container.appendChild(headerElement);
             header();
-            sign_upButtonContent();
             loginNlogout();
             profile();
         } 
@@ -81,43 +72,47 @@ function header() {
 }
 
 // change the text and function of the login or logout button
+// text and function of the sign up or profile button 
 function loginNlogout() 
 {
-    const button = document.getElementById("BTN_log");
+    const button1 = document.getElementById("BTN_log");
+    const button2 = document.getElementById("BTN_headerRight");
+    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
+
     
-    if (localStorage.getItem("login")) 
+    if (member) 
     {
-        button.innerText = "Log Out";
-        button.addEventListener("click", function(){ logout(); });
+        button1.innerText = "Log Out";
+        button1.addEventListener("click", function(){ logout(); });
+
+        button2.innerText = `${member.name}`;
+        button2.addEventListener("click", function() { window.location.href = 'profile.html'; });
 
     } else 
     {
-        button.innerText = "Login";
-        button.addEventListener("click", function() { window.location.href = "login.html"; });
+        button1.innerText = "Login";
+        button1.addEventListener("click", function() { window.location.href = "login.html"; });
+
+        button2.innerText = "Sign Up";
+        button2.addEventListener("click", function() { window.location.href = 'sign_up.html'; });
     }
 }
 
-// text and function of the sign up or profile button 
-function sign_upButtonContent() 
-{
-    const button = document.getElementById("BTN_headerRight");
-    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
-    
-    if (member)
-    {
-        button.innerText = `${member.name}`;
-        button.addEventListener('click', function() {
-            window.location.href = 'profile.html';
-        });
+// about page, scroll fucntion
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to scroll to the respective sections
+    function scrollToSection(DIV) {
+        document.getElementById(DIV).scrollIntoView({behavior: "smooth"})
     }
-    else 
-    {
-        button.innerText = `Sign Up`;
-        button.addEventListener('click', function() {
-            window.location.href = 'sign_up.html';
-        });
-    }
-}
+
+    var s = new URLSearchParams(window.location.search); // window.location.search == ?section=DIV_contact
+    // URLSearchParams got Parameter name: 'section' and Parameter value: 'DIV_contact'
+    var divID = s.get('section'); // s.get('section') return "DIV_contact" then saves it in divID
+
+    if (divID)
+        scrollToSection(divID); // scroll in to the page
+});
+
 
 // login.html
 function login()
@@ -153,7 +148,7 @@ function sign_up()
         showMessage("This TP number has register to our website. Please try again. ")
     else if (!name || !pass || !email || !contact)
         showMessage("Empty Input Found! Please try again. ")
-    else if (!checkTP(TP))
+    else if (!/^TP\d{6}$/.test(TP)) // /^TP\d{6}$/.test(TP) is a format TP123456
         showMessage("Invalid TP numbers. ")
     else
     {
@@ -163,12 +158,6 @@ function sign_up()
         
         window.location.href = "login.html";
     }
-    clearInputFields(TP,name,email, contact, pass)
-}
-
-function checkTP(TP)
-{
-    return  /^TP\d{6}$/.test(TP)
 }
 
 // logout button's fucntion
@@ -178,15 +167,15 @@ function logout()
     window.location.href = 'index.html';
 }
 
-// faq
+// faq 
 function faq(questionNum)
 {
     if (questionNum == 1)
     {
-        if (window.getComputedStyle(document.getElementById('faq_a1')).display === "block")
-            document.getElementById('faq_a1').style.display = "none";
+        if (window.getComputedStyle(document.getElementById('faq_a1')).display === "block") // if answer has already shown
+            document.getElementById('faq_a1').style.display = "none"; // hide answer
         else
-            document.getElementById('faq_a1').style.display = "block";
+            document.getElementById('faq_a1').style.display = "block"; // display answer
     }
     else if (questionNum == 2)
     {
@@ -251,25 +240,9 @@ function faq(questionNum)
         else
             document.getElementById('faq_a10').style.display = "block";
     }
-}
+} 
 
-// about page, scroll fucntion
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to scroll to the respective sections
-    function scrollToSection(DIV) {
-        document.getElementById(DIV).scrollIntoView({behavior: "smooth"})
-    }
-
-    var s = new URLSearchParams(window.location.search); // window.location.search == ?section=DIV_contact
-    // URLSearchParams got Parameter name: 'section' and Parameter value: 'DIV_contact'
-    var divID = s.get('section'); // s.get('section') return "DIV_contact" then saves it in divID
-
-    if (divID)
-        scrollToSection(divID); // scroll in to the page
-});
-
-
-// profile
+// profile // fill in the detail of the user automatically
 function profile() 
 {
     const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
@@ -312,10 +285,9 @@ function changePass()
         logout()
         window.location.href = "login.html"
     }
-    clearInputFields(TP,oldP,newP,confirmP)
 }
 
-// feedback
+// feedback // send feedback
 function feedback()
 {
     const feedback = document.getElementById("TXT").value;
@@ -326,6 +298,7 @@ function feedback()
     }
 }
 
+// check when going opening feeback.html
 function loginStatus()
 {
     if (localStorage.getItem("login"))

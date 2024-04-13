@@ -36,6 +36,7 @@ img {
 
 .DIV_profilePic, .DIV_userName, .DIV_tpNcontact, .DIV_email, .DIV_changePass {
     text-align: center;
+    padding: 0 0 40px 0;
 }
 
 .DIV_tpNcontact {

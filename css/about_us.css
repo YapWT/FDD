@@ -18,7 +18,6 @@ body {
         height: max-content;
 }
 
-
 ul {
         display: grid; 
         justify-content: center;
@@ -54,13 +53,9 @@ p {
         margin: auto;
 }
 
-.DIV_contact1 h1 {
-        padding-top: 30%;
-}
-
 .DIV_contact1 h1, .DIV_contact2 h2 {
         font-family: 'Blueberry';
-        padding-top: 5%;
+        padding-top: 50px;
 }
 
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {
@@ -87,6 +82,8 @@ p {
         padding: 5px;
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
 }
 
 .DIV_connect2 img {

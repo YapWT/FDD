@@ -183,7 +183,7 @@ function profile()
 {
     const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
 
-    if (member)
+    if (member && window.location.href.includes("profile.html"))
     {
         const name = document.getElementById("h3_userName");
         const TP = document.getElementById("p_TPnumber");

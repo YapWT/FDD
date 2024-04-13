@@ -55,7 +55,7 @@ header {
     font-size: x-large;
 }
 
-.BTN_home, #BTN_log, .BTN_DRP {
+#BTN_home, #BTN_log, #BTN_act, #BTN_about {
     background-color: transparent;
     font-size: xx-large;
     margin-left: 20px;
@@ -90,12 +90,7 @@ header {
     display: block;
 }
 
-.BTN_dropContant2 {
-    width: 100px;
-    border-radius: 0px;
-}
-
-.BTN_dropContant {
+.DIV_DRPcontent button {
     width: 150px;
     border-radius: 0px;
 }
@@ -105,9 +100,25 @@ header {
 }
 
 #BTN_headerRight {
-    width: 150px;
+    width: 155px;
     height: 100px;
     font-size: xx-large;
+    background-image: url(/img/button.png);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    position: relative; 
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+}
+
+#BTN_headerRight:hover {
+    background-image: url("/img/button hover.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+    display: inline-block;
+    background-color: transparent;
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/appoinment.css">
+        <title>Appoinment</title>
+        <link rel="icon" href="logo/Cotton Logo.png" type="image/png">
+    </head>
+
+    <body>
+        <div>
+            <a href="index.html">
+                <img src="logo/Cotton Logo.png" alt="Cotton CLub"> 
+            </a>
+        </div>
+
+        <main>
+            <div>
+                <div class="DIV_appoinment">
+                    <h2>Appointment</h2>
+                    <select id="CBB_act">
+                        <option></option>
+                        <option value="m">Mirror Tufting</option>
+                        <option value="r">Rug Tufting</option>
+                        <option value="g">Group Tufting</option>
+                    </select>
+                    
+                    <br><br>
+                    <label for="INP_person">Number of People</label><br>
+                    <input type='number' id='INP_person' min='1' value='1'>
+    
+                    <br><br>
+
+                    <div class="DIV_buttons">
+                        <a href="activities.html"><button>Back</button></a>
+                        <button onclick="appoinment()">Send</button>
+                    </div>
+                    
+                </div>
+                
+                    <br>
+                    <div id="p_message">
+                        Thank-you message area. <br>
+                        Thank-you message area. <br>
+                        Thank-you message area. <br>
+                        Thank-you message area. <br>
+                        Thank-you message area. <br>
+                    </div>
+            </div>
+
+        </main>
+
+        <script src="index.js"></script>
+    </body>
+</html>

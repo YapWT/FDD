@@ -12,46 +12,48 @@ function showMessage(message)
 
 // fetch the header then run other program
 window.onload = function() {
-    var page = ["aboutNcontact.html", "activities.html", "feedback.html", "index.html", "profile.html", "faq.html"];
+    var page = ["aboutNcontact.html", "activities.html", "index.html", "faq.html"];
     
     if (page.some(p => page.includes(p)))
         fetchHeader()
 };
 
 function fetchHeader() {
-    var xhr = new XMLHttpRequest();
+    if (document.getElementById("header"))
+    {
+        var xhr = new XMLHttpRequest();
 
-    // Open a GET request to fetch the header content
-    xhr.open('GET', 'header.html', true);
+        // Open a GET request to fetch the header content
+        xhr.open('GET', 'header.html', true);
 
-    // Define what happens on successful load
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            var tempDiv = document.createElement('div');
+        // Define what happens on successful load
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var tempDiv = document.createElement('div');
 
-            // Set the response content as innerHTML of the div
-            tempDiv.innerHTML = xhr.responseText;
+                // Set the response content as innerHTML of the div
+                tempDiv.innerHTML = xhr.responseText;
 
-            // Find the header element inside the temporary div
-            var headerElement = tempDiv.querySelector('header');
+                // Find the header element inside the temporary div
+                var headerElement = tempDiv.querySelector('header');
 
-            // Get the container element where you want to insert the header
-            var container = document.getElementById('header');
+                // Get the container element where you want to insert the header
+                var container = document.getElementById('header');
 
-            container.appendChild(headerElement);
-            header();
-            loginNlogout();
-            profile();
-        } 
-    };
+                container.appendChild(headerElement);
+                header();
+                loginNlogout();
+            } 
+        };
 
-    // Handle errors
-    xhr.onerror = function() {
-        console.error('Network error while loading header');
-    };
+        // Handle errors
+        xhr.onerror = function() {
+            console.error('Network error while loading header');
+        };
 
-    // Send the request
-    xhr.send();
+        // Send the request
+        xhr.send();
+    }
 }
 
 function header() {
@@ -63,12 +65,8 @@ function header() {
     else if (currentPage.includes('activities.html')) 
        document.getElementById('BTN_act').style.backgroundColor = 'rgb(191,226,255)';
     
-    else if (currentPage.includes('aboutNcontact.html') || currentPage.includes('faq.html') || currentPage.includes('feedback.html')) 
+    else if (currentPage.includes('aboutNcontact.html') || currentPage.includes('faq.html')) 
        document.getElementById('BTN_about').style.backgroundColor = 'rgb(191,226,255)';
-
-    else if (currentPage.includes('profile.html') || currentPage.includes('changePassword.html'))
-        document.getElementById('BTN_headerRight').style.backgroundColor = 'rgb(191,226,255)';
-
 }
 
 // change the text and function of the login or logout button
@@ -77,23 +75,22 @@ function loginNlogout()
 {
     const button1 = document.getElementById("BTN_log");
     const button2 = document.getElementById("BTN_headerRight");
-    const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
-
     
-    if (member) 
+    if (localStorage.getItem("login")) 
     {
         button1.innerText = "Log Out";
         button1.addEventListener("click", function(){ logout(); });
 
-        button2.innerText = `${member.name}`;
-        button2.addEventListener("click", function() { window.location.href = 'profile.html'; });
+        button2.innerText = "Profile";
+        button2.style.fontSize = "x-large";
+        button2.addEventListener("click", function() { window.location.href = "profile.html"; });
 
     } else 
     {
         button1.innerText = "Login";
         button1.addEventListener("click", function() { window.location.href = "login.html"; });
 
-        button2.innerText = "Sign Up";
+        button2.innerText = "Sign\nUp";
         button2.addEventListener("click", function() { window.location.href = 'sign_up.html'; });
     }
 }
@@ -112,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (divID)
         scrollToSection(divID); // scroll in to the page
 });
-
 
 // login.html
 function login()
@@ -138,7 +134,6 @@ function sign_up()
 {
     const TP = document.getElementById("INP_signTP").value.toUpperCase();
     const name = document.getElementById("INP_signName").value;
-    const email = document.getElementById("INP_signEmail").value;
     const contact = document.getElementById("INP_signPhone").value;
     const pass = document.getElementById("INP_signPass").value;
 
@@ -146,13 +141,15 @@ function sign_up()
 
     if (member)
         showMessage("This TP number has register to our website. Please try again. ")
-    else if (!name || !pass || !email || !contact)
+    else if (!name || !pass || !contact)
         showMessage("Empty Input Found! Please try again. ")
     else if (!/^TP\d{6}$/.test(TP)) // /^TP\d{6}$/.test(TP) is a format TP123456
         showMessage("Invalid TP numbers. ")
+    else if (!/^01\d-\d{7}$|^01\d-\d{8}$/.test(contact))
+        showMessage("Invalid Phone Number. ")
     else
     {
-        const m = {name, email, contact, pass}
+        const m = {name, email: `${TP.toLowerCase()}@mail.apu.edu.my`, contact, pass}
         localStorage.setItem(TP, JSON.stringify(m));
         alert(`${TP} register sucessful! You can login to our website. `);
         
@@ -170,83 +167,23 @@ function logout()
 // faq 
 function faq(questionNum)
 {
-    if (questionNum == 1)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a1')).display === "block") // if answer has already shown
-            document.getElementById('faq_a1').style.display = "none"; // hide answer
-        else
-            document.getElementById('faq_a1').style.display = "block"; // display answer
-    }
-    else if (questionNum == 2)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a2')).display === "block")
-            document.getElementById('faq_a2').style.display = "none";
-        else
-            document.getElementById('faq_a2').style.display = "block";
-    }
-    else if (questionNum == 3)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a3')).display === "block")
-        document.getElementById('faq_a3').style.display = "none";
-        else
-        document.getElementById('faq_a3').style.display = "block";
-    }
-    else if (questionNum == 4)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a4')).display === "block")
-        document.getElementById('faq_a4').style.display = "none";
-        else
-        document.getElementById('faq_a4').style.display = "block";
-    }
-    else if (questionNum == 5)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a5')).display === "block")
-            document.getElementById('faq_a5').style.display = "none";
-        else
-            document.getElementById('faq_a5').style.display = "block";
-    }
-    else if (questionNum == 6)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a6')).display === "block")
-            document.getElementById('faq_a6').style.display = "none";
-        else
-            document.getElementById('faq_a6').style.display = "block";
-    }
-    else if (questionNum == 7)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a7')).display === "block")
-        document.getElementById('faq_a7').style.display = "none";
-        else
-        document.getElementById('faq_a7').style.display = "block";
-    }
-    else if (questionNum == 8)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a8')).display === "block")
-            document.getElementById('faq_a8').style.display = "none";
-        else
-            document.getElementById('faq_a8').style.display = "block";
-    }
-    else if (questionNum == 9)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a9')).display === "block")
-            document.getElementById('faq_a9').style.display = "none";
-        else
-            document.getElementById('faq_a9').style.display = "block";
-    }
-    else if (questionNum == 10)
-    {
-        if (window.getComputedStyle(document.getElementById('faq_a10')).display === "block")
-            document.getElementById('faq_a10').style.display = "none";
-        else
-            document.getElementById('faq_a10').style.display = "block";
-    }
+    var e = document.getElementsByClassName('faq_a')[questionNum - 1]
+
+    if (window.getComputedStyle(e).display === "block")
+        e.style.display = "none";
+    else 
+        e.style.display = "block"; // display answer
 } 
 
 // profile // fill in the detail of the user automatically
-function profile() 
+window.addEventListener("DOMContentLoaded", function() {
+    profile();})
+
+function profile()
 {
     const member = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("login"))));
-    if (member && window.location.href.includes("profile.html"))
+
+    if (member)
     {
         const name = document.getElementById("h3_userName");
         const TP = document.getElementById("p_TPnumber");
@@ -293,16 +230,50 @@ function feedback()
     const feedback = document.getElementById("TXT").value;
     if (feedback != "")
     {
-        showMessage("We had receive your feeback! Thank You!");
+        const p = document.getElementById("p_message");
+        p.style.visibility = 'visible';
+        p.innerText = `We had receive your feeback! Thank You!\n
+                        We look forward to see you!\n
+                        If you have any questions, please contact us at [603 - 456 7890] or email us on [cotton_info@gmail.com].`
         document.getElementById("TXT").value = "";
     }
 }
 
-// check when going opening feeback.html
-function loginStatus()
+function loginStatus(page)
 {
     if (localStorage.getItem("login"))
-        window.location.href = "feedback.html";
+        window.location.href = page;
+
     else
-        window.location.href = "login.html";
+    {
+        if (window.confirm("Please login first! Do you want to go to the login page?"))
+            window.location.href = "login.html";
+    }
+}
+
+function appoinment()
+{
+    const act = document.getElementById("CBB_act").value;
+    const num = document.getElementById("INP_person").value;
+
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1; // Month (0-11, add 1 to get 1-12)
+    const date = now.getDate(); // Day of the month (1-31)
+    const hours = now.getHours(); // Hour (0-23)
+    const minutes = now.getMinutes(); // Minute (0-59)
+    const seconds = now.getSeconds(); // Second (0-59)
+
+    if (act && num)
+    {
+        const p = document.getElementById("p_message");
+        p.style.visibility = 'visible';
+        p.innerText = `\nThank you for submitting your appointment request! Confirmation Number: [a${year}${month}${date}${hours}${minutes}${seconds}].\n
+                        You will receive a confirmation email shortly. If you have any questions or need to make changes. \n
+                        Please contact us at [603 - 456 7890] or email us on [cotton_info@gmail.com]. \n
+                        We look forward to see you!`;
+        document.getElementById("CBB_act").value = "";
+    }
+    else
+        showMessage("\n\nPlease fill out all input fields! \n\n")
 }

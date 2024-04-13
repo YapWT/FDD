@@ -4,28 +4,20 @@
 }
 
 main {
-        margin: 0;
-        padding: 0;
+        padding: 0 0 0 50px;
         margin: auto;
         text-align: center;
         font-family: 'Comic Sans MS', cursive;
-        padding-bottom: 50px;
 }
 
 body {
         background-image: url("/BG/aboutBG2.png");
+        background-size: cover;
+        background-clip: content-box;
+        min-height: 100vh;
+        height: max-content;
 }
 
-.hhhh {
-        font-family: 'Blueberry';
-        padding-top: 5%;
-}
-
-.hhhh1 {
-        font-family: 'Blueberry';
-        padding-top: 40%;
-        font-size: 80px;
-}
 
 ul {
         display: grid; 
@@ -36,18 +28,25 @@ li {
         text-align: justify;
 }
 
-.p_ac {
+p {
         display: grid;
         text-align: justify;
         justify-content: center;
 }
+
 /* aboutus */
 #DIV_about {
         width: 50%;
         text-align: center;
         margin: auto;
 }
-    
+
+#DIV_about h1 {
+        font-family: 'Blueberry';
+        padding-top: 40%;
+        font-size: 80px;
+}
+
 /* contact_us */
 .DIV_contact1 {
         width: 50%;
@@ -55,13 +54,22 @@ li {
         margin: auto;
 }
 
+.DIV_contact1 h1 {
+        padding-top: 30%;
+}
+
+.DIV_contact1 h1, .DIV_contact2 h2 {
+        font-family: 'Blueberry';
+        padding-top: 5%;
+}
+
 .DIV_CgeneralNclub, .DIV_CvisitNoffice {
         display: flex;
         padding: 0;
         margin: 0;
 }
-    
-.DIV_Cgeneral, .DIV_Cvisit, .DIV_Cclub, .DIV_Coffice {
+
+.DIV_CgeneralNclub div, .DIV_CvisitNoffice div {
         position: relative;
         margin: 0 auto;
         padding: 0;
@@ -74,9 +82,14 @@ li {
         padding: 0;
 }
 
-.DIV_img {
+.DIV_connect2 div {
         flex: 1;
         padding: 5px;
         display: flex;
         flex-direction: row;
+}
+
+.DIV_connect2 img {
+        height: 20px;
+        width: 20px;
 }

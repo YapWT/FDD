@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Blueberry';
+    src: url('/font-family/Blueberry.ttf');
+}
+
+@font-face {
+    font-family: "Bantayog";
+    src: url("/font-family/Bantayog-Regular.woff2");
+}
+
+body {
+    background: url("/BG/aboutBG2.png") no-repeat center;
+    background-size: cover;
+    background-clip: content-box;
+    font-family: "Bantayog";
+    width: 100%;
+    display: flex;
+    align-items: center; /*X*/
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+    min-height: 100vh;
+    height: max-content;
+}
+
+#p_message {
+    visibility: hidden;
+    padding-bottom: 10px;
+}
+
+.DIV_feedback button {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-family: "Bantayog";
+    font-size: larger;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.507);
+    cursor: pointer;
+}
+
+.DIV_feedback button:hover {
+    background-color: rgba(128, 128, 128, 0.507);
+    border: none;
+}
+
+.DIV_feedback {
+    padding: 0px 80px 30px 80px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.741);
+    border-radius: 5px;
+    width: max-content;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.DIV_feedback h2 {
+    text-align: justify;
+    font-size: 30px;
+    font-family: 'Bantayog';
+}
+
+textarea {
+    width: 300px;
+    height: 250px;
+    resize: none;
+    font-size: medium;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.726);
+    font-family: Century Gothic;
+}
+
+.DIV_buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}

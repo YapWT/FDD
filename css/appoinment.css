@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Blueberry';
+    src: url('/font-family/Blueberry.ttf');
+}
+
+@font-face {
+    font-family: "Bantayog";
+    src: url("/font-family/Bantayog-Regular.woff2");
+}
+
+body {
+    background: url("/BG/SignLogBG.png") no-repeat center;
+    background-size: cover;
+    font-family: Century Gothic;
+    text-align: justify;
+    display: flex;
+    align-items: center; /*X*/
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-clip: content-box;
+    min-height: 100vh;
+    height: max-content;
+}
+
+.DIV_appoinment {
+    padding: 30px 80px;
+    text-align: justify;
+    border: 1px solid rgba(0, 0, 0, 0.741);
+    border-radius: 5px;
+    width: max-content;
+    margin: auto;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+#p_message {
+    visibility: hidden;
+    padding-bottom: 10px;
+    font-family: Century Gothic;
+    text-align: justify;
+}
+
+.DIV_appoinment h2 {
+    text-align: justify;
+    font-size: 30px;
+    font-family: 'Bantayog';
+}
+
+label {
+    margin: auto;
+    text-align: justify;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 245px;
+    font-family: Century Gothic;
+}
+
+select {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 35px;
+    width: 250px;
+    font-family: Century Gothic;
+}
+
+.DIV_appoinment button {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-family: "Bantayog";
+    font-size: larger;
+    font-weight: 1000;
+    background-color: rgba(255, 255, 255, 0.507);
+    cursor: pointer;
+}
+
+.DIV_appoinment button:hover {
+    background-color: rgba(128, 128, 128, 0.507);
+    border: none;
+}
+
+.DIV_appoinment button:active {
+    background-color: rgba(255, 255, 255, 0.507);
+}
+
+.DIV_buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}

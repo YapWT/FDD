@@ -3,19 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/ff.css">
+        <link rel="stylesheet" href="/css/feedback.css">
+        <link rel="icon" href="logo/Cotton Logo.png" type="image/png">
         <title>Feedback</title>
     </head>
 
-    <body style="text-align: center;">
-        <header id="header"></header>
+    <body>
+        <div class="ABCD">
+            <a href="index.html">
+                <img src="logo/Cotton Logo.png" alt="Cotton Club"> 
+            </a>
+        </div>
 
         <main>
             <div class="DIV_feedback">
-                <h2 class="h_feedback">Send Us a Feedback</h2>
-                <textarea id="TXT" placeholder="Write Something..."></textarea> <br><br>
-                <button class="BTN_feedback" onclick="feedback()">Send</button>
+                <h2>Send Us a Feedback</h2>
+                <textarea id="TXT" placeholder="Write Something..."></textarea><br><br>
                 
+                <div class="DIV_buttons">
+                    <a href="index.html"><button>Home</button></a>
+                    <button onclick="feedback()">Send</button>
+                </div>
             </div>
 
             <br>

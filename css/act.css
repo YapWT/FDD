@@ -76,18 +76,20 @@ main {
 .DIV_showPic {
     display: flex;
     margin: 10px 0px;
-    padding: 20px;
+    padding: 15px;
     background-color: rgba(255, 255, 255, 0.581);
-    align-items: center; 
+    align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .DIV_showPic img {
     margin: 0;
     margin: 0 8px;
-    background-color: rgba(255, 255, 255, 0.536);
+    /* background-color: rgba(255, 255, 255, 0.536); */
     border-radius: 20px;
     width: 200px;
+    padding: 15px 0;
 }
 
 .DIV_actInfo {
